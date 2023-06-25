@@ -1,5 +1,5 @@
-import { getRandomArrayElement, getRandomInteger } from "./functions";
-import { mockDescriptions, mockMessages, mockNames } from "./mocks";
+import { getRandomArrayElement, getRandomInteger, getRandomIdFromRange } from './functions';
+import { mockComments, mockDescriptions, mockMessages, mockNames } from './mocks';
 
 export const RANDOM_USER_ID = getRandomIdFromRange(1,25);
 
@@ -18,3 +18,5 @@ export const RANDOM_MESSAGE = getRandomArrayElement(mockMessages);
 export const RANDOM_COMMENTS_COUNT = getRandomInteger(0,30);
 
 export const MAX_POSTS_COUNT = 25;
+
+export const RANDOM_COMMENTS = getRandomArrayElement(mockComments);

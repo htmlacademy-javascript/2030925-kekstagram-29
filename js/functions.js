@@ -38,7 +38,7 @@ export const getRandomIdFromRange = () => {
   const previousValues = [];
 
   return(
-    function() {
+    function(min,max) {
       let currentValue = getRandomInteger(min,max);
       if(previousValues.length >= (max - min + 1)) {
         return null;
