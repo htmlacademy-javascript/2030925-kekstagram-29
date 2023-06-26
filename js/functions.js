@@ -55,3 +55,4 @@ export const getRandomIdFromRange = () => {
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
+/*Удалю в след коммите*/
