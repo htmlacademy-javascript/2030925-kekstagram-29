@@ -1,9 +1,9 @@
-import {Photos, Posts, Comments } from './constants';
-import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions';
-import {mockComments, mockDescriptions, mockMessages, mockNames} from './mocks';
+import {Photos, Posts, Comments } from './constants.js';
+import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions.js';
+import {mockComments, mockDescriptions, mockMessages, mockNames} from './mocks.js';
 
 
-const createPost = () =>({
+const createPost = () => ({
   id: getRandomIdFromRange(Posts.MIN_ID,Posts.MAX_ID),
   url:  `photos/${getRandomIdFromRange(1,25)}.jpg`,
   description: getRandomArrayElement(mockDescriptions),
@@ -11,7 +11,7 @@ const createPost = () =>({
   comments: getRandomArrayElement(mockComments)
 });
 
-const createComment = () =>({
+const createComment = () => ({
   id:  getRandomIdFromRange(Comments.MIN_COMMENTS_ID, Comments.MAX_COMMENTS_ID),
   avatar: `img/avatar-${getRandomInteger(Photos.MIN_AVATAR_PHOTOS, Photos.MAX_AVATAR_PHOTOS)}.svg`,
   message: getRandomArrayElement(mockMessages),
