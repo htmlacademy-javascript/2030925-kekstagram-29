@@ -1,4 +1,3 @@
-
 export const Photos = {
   MIN_PHOTOS: 1,
   MAX_PHOTOS: 25,
