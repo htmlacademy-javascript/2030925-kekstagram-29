@@ -51,7 +51,11 @@ export const getRandomIdFromRange = () => {
     }
   );
 };
+/*
+export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, meetTimeInMinutes) => {
 
+};
+*/
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');

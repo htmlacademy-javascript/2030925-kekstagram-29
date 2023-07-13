@@ -3,5 +3,3 @@ import { createMoreComments } from './create-comment.js';
 
 createMorePosts();
 createMoreComments();
-
-/* Удалю в след коммите */

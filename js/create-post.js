@@ -10,7 +10,7 @@ const createPost = () =>({
   comments: getRandomArrayElement(mockComments)
 });
 
-const createMorePosts = () => {
+export const createMorePosts = () => {
   Array.from({length: Posts.MAX_POSTS}, createPost);
 };
 createMorePosts();
