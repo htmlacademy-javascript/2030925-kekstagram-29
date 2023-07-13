@@ -1,20 +1,19 @@
 import { createMorePosts } from './create-post';
 
-const randomUserPostListElement = document.querySelectorAll('.pictures');
-const randomUserPostTemplate = document.querySelector('#picture').content;
-const randomUserPosts = createMorePosts();
-const randomUserPostFragment = document.createDocumentFragment();
+const randomUserPictureListElement = document.querySelectorAll('.pictures');
+const randomUserPictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
+const randomUserPictures = createMorePosts();
+const randomUserPictureFragment = document.createDocumentFragment();
 
-export const createRandomUserPost = function() {
-    randomUserPosts.forEach((url, description, likes, comments) => {
-        const randomUserPost = randomUserPostTemplate.cloneNode(true);
-        randomUserPost.querySelector('.picture__img').src = url;
-        randomUserPost.querySelector('.picture__img').alt = description;
-        randomUserPost.querySelector('.picture__likes').textContent = likes;
-        randomUserPost.querySelector('.picture__comments').textContent = comments;
-        randomUserPostFragment.appendChild(randomUserPost);
+    randomUserPictures.forEach(({url, description, likes, comments}) => {
+        const randomUserPicture = randomUserPictureTemplate.cloneNode(true);
+        randomUserPicture.querySelector('.picture__img').src = url;
+        randomUserPicture.querySelector('.picture__img').alt = description;
+        randomUserPicture.querySelector('.picture__likes').value = likes;
+        randomUserPicture.querySelector('.picture__comments').value = comments;
+        randomUserPictureFragment.appendChild(randomUserPicture);
       });
       
-      randomUserPostListElement.appendChild(randomUserPostFragment);
-}
+      randomUserPictureListElement.appendChild(randomUserPictureFragment);
+
 
