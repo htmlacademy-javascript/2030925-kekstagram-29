@@ -34,6 +34,21 @@ export const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+export const getRandomIdFromRange = (min,max) => {
+  const previousValues = [];
+  return function() {
+    let currentValue = getRandomInteger(min,max);
+    if(previousValues.length >= (max - min + 1)) {
+      return null;
+    }
+    while (previousValues.includes(currentValue)) {
+      currentValue = getRandomInteger(min,max);
+    }
+    previousValues.push(currentValue);
+    return currentValue;
+  };
+};
+/*
 export const getRandomIdFromRange = () => {
   const previousValues = [];
 
@@ -51,7 +66,11 @@ export const getRandomIdFromRange = () => {
     }
   );
 };
+/*
+export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, meetTimeInMinutes) => {
 
+};
+*/
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
