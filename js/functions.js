@@ -46,8 +46,8 @@ export const getRandomIdFromRange = (min,max) => {
     }
     previousValues.push(currentValue);
     return currentValue;
-  }
-}
+  };
+};
 /*
 export const getRandomIdFromRange = () => {
   const previousValues = [];

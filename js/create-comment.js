@@ -3,7 +3,7 @@ import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './f
 import {mockMessages, mockNames} from './mocks.js';
 
 const createComment = () =>({
-  id:  getRandomIdFromRange(Comments.MIN_COMMENTS_ID, Comments.MAX_COMMENTS_ID),
+  id:  getRandomIdFromRange(Comments.MIN_COMMENTS_ID, Comments.MAX_COMMENTS_ID)(),
   avatar: `img/avatar-${getRandomInteger(Photos.MIN_AVATAR_PHOTOS, Photos.MAX_AVATAR_PHOTOS)}.svg`,
   message: getRandomArrayElement(mockMessages),
   name: getRandomArrayElement(mockNames)
