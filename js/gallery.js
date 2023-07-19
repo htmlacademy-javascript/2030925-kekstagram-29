@@ -1,5 +1,5 @@
-import { openBigPicture } from './big-picture-form';
-import { renderPictures } from './create-picture';
+import { openBigPicture } from './big-picture-form.js';
+import { renderPictures } from './create-picture.js';
 
 const picturesContainer = document.querySelector('.pictures');
 
