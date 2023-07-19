@@ -9,7 +9,4 @@ const createComment = () =>({
   name: getRandomArrayElement(mockNames)
 });
 
-export const createMoreComments = () => {
-  Array.from({length:  getRandomInteger(Comments.MIN_COM,Comments.MAX_COM)}, createComment);
-};
-createMoreComments();
+export const createMoreComments = () => Array.from({length:  getRandomInteger(Comments.MIN_COMMENTS,Comments.MAX_COMMENTS)}, createComment);

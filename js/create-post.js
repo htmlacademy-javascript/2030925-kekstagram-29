@@ -1,6 +1,7 @@
 import {Posts, Photos} from './constants.js';
 import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './util.js';
-import {mockComments, mockDescriptions} from './mocks.js';
+import {mockDescriptions} from './mocks.js';
+import {createMoreComments} from './create-comment.js';
 
 const postPhotos = getRandomIdFromRange(Photos.MIN_PHOTOS, Photos.MAX_PHOTOS);
 const idPost = getRandomIdFromRange(Posts.MIN_ID,Posts.MAX_ID);
@@ -10,7 +11,7 @@ const createPost = () => (
     url:  `photos/${postPhotos()}.jpg`,
     description: getRandomArrayElement(mockDescriptions),
     likes: getRandomInteger(Posts.MIN_LIKES, Posts.MAX_LIKES),
-    comments: getRandomArrayElement(mockComments)
+    comments: createMoreComments()
   }
 );
 
