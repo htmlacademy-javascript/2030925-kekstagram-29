@@ -9,7 +9,7 @@ export const Comments = {
   MIN_COMMENTS_ID: 1,
   MAX_COMMENTS_ID: 25,
   MIN_COMMENTS: 0,
-  MAX_COMMENTS: 30,
+  MAX_COMMENTS: 30
 };
 
 export const Posts = {
@@ -17,5 +17,5 @@ export const Posts = {
   MAX_ID: 25,
   MIN_LIKES: 15,
   MAX_LIKES: 200,
-  MAX_POSTS: 25,
+  MAX_POSTS: 25
 };
