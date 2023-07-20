@@ -1,5 +1,5 @@
 import {Photos, Comments } from './constants.js';
-import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './util.js';
+import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions.js';
 import {mockMessages, mockNames} from './mocks.js';
 
 const createComment = () =>({

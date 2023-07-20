@@ -1,5 +1,5 @@
 import {Posts, Photos} from './constants.js';
-import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './util.js';
+import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions.js';
 import {mockDescriptions} from './mocks.js';
 import {createMoreComments} from './create-comment.js';
 

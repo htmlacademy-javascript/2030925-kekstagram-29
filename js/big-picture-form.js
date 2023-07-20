@@ -1,5 +1,5 @@
 import './create-picture.js';
-import { isEscapeKey } from './util.js';
+import { isEscapeKey } from './functions.js';
 import { COMMENTS_PORTION } from './constants.js';
 
 const bigPictureElement = document.querySelector('.big-picture');
