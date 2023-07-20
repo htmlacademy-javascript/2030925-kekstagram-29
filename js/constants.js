@@ -19,3 +19,5 @@ export const Posts = {
   MAX_LIKES: 200,
   MAX_POSTS: 25
 };
+
+export const COMMENTS_PORTION = 5;
