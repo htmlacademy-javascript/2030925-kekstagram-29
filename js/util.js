@@ -48,6 +48,10 @@ export const getRandomIdFromRange = (min,max) => {
     return currentValue;
   };
 };
+
+export const isEscapeKey = (evt) => evt.key === 'Escape';
+
+
 /*
 export const getRandomIdFromRange = () => {
   const previousValues = [];
