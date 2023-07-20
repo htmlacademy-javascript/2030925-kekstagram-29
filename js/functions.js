@@ -70,7 +70,7 @@ export const getRandomIdFromRange = () => {
     }
   );
 };
-*/
+*//*
 export const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
@@ -84,7 +84,7 @@ export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, start
 
   return (startMeetTimeInHours >= startWorkTimeInHours) && (startMeetTimeInHours + meetTimeInMinutes) <= endWorkTimeInHours;
 };
-
+*/
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
