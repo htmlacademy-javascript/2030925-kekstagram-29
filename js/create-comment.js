@@ -1,6 +1,6 @@
-import {Photos, Comments } from './constants';
-import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions';
-import {mockMessages, mockNames} from './mocks';
+import {Photos, Comments } from './constants.js';
+import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions.js';
+import {mockMessages, mockNames} from './mocks.js';
 
 const createComment = () =>({
   id:  getRandomIdFromRange(Comments.MIN_COMMENTS_ID, Comments.MAX_COMMENTS_ID),

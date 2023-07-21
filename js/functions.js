@@ -52,8 +52,7 @@ export const getRandomIdFromRange = () => {
   );
 };
 
-
-export const turnToMinutes = (timeStr) => {
+const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
   return (hours * 60) + +minutes;

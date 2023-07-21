@@ -1,6 +1,6 @@
-import {Posts} from './constants';
-import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions';
-import {mockComments, mockDescriptions} from './mocks';
+import {Posts} from './constants.js';
+import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './functions.js';
+import {mockComments, mockDescriptions} from './mocks.js';
 
 const createPost = () =>({
   id: getRandomIdFromRange(Posts.MIN_ID,Posts.MAX_ID),
