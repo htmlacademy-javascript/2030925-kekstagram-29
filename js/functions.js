@@ -70,11 +70,22 @@ export const getRandomIdFromRange = () => {
     }
   );
 };
-/*
-export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, meetTimeInMinutes) => {
+*//*
+export const turnToMinutes = (timeStr) => {
+  const [hours, minutes] = timeStr.split(':');
 
+  return (hours * 60) + +minutes;
+};
+
+export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, startMeetTimeInHours, meetTimeInMinutes) => {
+  startWorkTimeInHours = turnToMinutes(startWorkTimeInHours);
+  endWorkTimeInHours = turnToMinutes(endWorkTimeInHours);
+  startMeetTimeInHours = turnToMinutes(startMeetTimeInHours);
+
+  return (startMeetTimeInHours >= startWorkTimeInHours) && (startMeetTimeInHours + meetTimeInMinutes) <= endWorkTimeInHours;
 };
 */
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
+calculateMeeting('8:00','14:00', '13:00', 60);
