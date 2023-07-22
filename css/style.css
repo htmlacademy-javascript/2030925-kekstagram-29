@@ -1408,3 +1408,10 @@ main {
 .hidden {
   display: none;
 }
+
+.img-upload__field-wrapper-error {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 19px;
+  text-shadow: 1px 1px 2px black, 0 0 1em red, 0 0 0.2em red;
+}
