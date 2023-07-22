@@ -5,7 +5,8 @@ import './big-picture-form.js';
 import './gallery.js';
 import { createMorePosts } from './create-post.js';
 import { renderGallery } from './gallery.js';
-
+import { renderModalForm } from './form.js';
 const arrPictures = createMorePosts();
 
 renderGallery(arrPictures);
+renderModalForm();

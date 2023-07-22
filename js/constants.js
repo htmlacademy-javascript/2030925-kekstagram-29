@@ -21,3 +21,13 @@ export const Posts = {
 };
 
 export const COMMENTS_PORTION = 5;
+
+export const MAX_HASHTAG = 5;
+
+export const REGULAR_SYMBOLS = /^[a-zа-яё0-9]{1,19}$/i;
+
+export const ErrorMessage = {
+  INVALID_HASHTAG_COUNT: `Максимальная число хештегов &mdash; ${MAX_HASHTAG} символов`,
+  INVALID_HASHTAG_PATTERN: 'Хештег(и) составлен(ы) неправильно',
+  NON_UNIQUE_HASHTAG: 'Соблюдайте уникальность при составлении ваших хештегов!'
+};

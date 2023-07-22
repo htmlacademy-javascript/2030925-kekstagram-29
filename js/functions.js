@@ -88,4 +88,3 @@ export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, start
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
-calculateMeeting('8:00','14:00', '13:00', 60);
