@@ -55,7 +55,7 @@ export const getRandomIdFromRange = () => {
 const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
-  return (hours * 60) + +minutes;
+  return (hours * 60) + Number(minutes);
 };
 
 export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, startMeetTimeInHours, meetTimeInMinutes) => {
