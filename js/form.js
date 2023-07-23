@@ -27,7 +27,7 @@ const checkTagUnique = (tags) => {
 const hasValidCount = (tags) => normalizeTags(tags).length <= MAX_HASHTAG;
 
 const hasValidTags = (tags) => {
-  normalizeTags(tags).every((tag) => REGULAR_SYMBOLS.test(tag));
+  return normalizeTags(tags).every((tag) => REGULAR_SYMBOLS.test(tag));
 };
 
 pristine.addValidator(hashtagField, checkTagUnique, ErrorMessage.NON_UNIQUE_HASHTAG, 1 , false);
