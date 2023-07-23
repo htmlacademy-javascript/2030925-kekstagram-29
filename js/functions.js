@@ -34,6 +34,25 @@ export const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+export const getRandomIdFromRange = (min,max) => {
+  const previousValues = [];
+  return function() {
+    let currentValue = getRandomInteger(min,max);
+    if(previousValues.length >= (max - min + 1)) {
+      return null;
+    }
+    while (previousValues.includes(currentValue)) {
+      currentValue = getRandomInteger(min,max);
+    }
+    previousValues.push(currentValue);
+    return currentValue;
+  };
+};
+
+export const isEscapeKey = (evt) => evt.key === 'Escape';
+
+
+/*
 export const getRandomIdFromRange = () => {
   const previousValues = [];
 
@@ -51,11 +70,11 @@ export const getRandomIdFromRange = () => {
     }
   );
 };
-
+*/
 export const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
-  return (hours * 60) + +minutes;
+  return (hours * 60) + Number(minutes);
 };
 
 export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, startMeetTimeInHours, meetTimeInMinutes) => {

@@ -3,15 +3,16 @@ import {getRandomArrayElement, getRandomIdFromRange, getRandomInteger} from './f
 import {mockDescriptions} from './mocks.js';
 import {createMoreComments} from './create-comment.js';
 
-const createPost = () =>({
-  id: getRandomIdFromRange(Posts.MIN_ID,Posts.MAX_ID),
-  url:  `photos/${getRandomIdFromRange(1,25)}.jpg`,
-  description: getRandomArrayElement(mockDescriptions),
-  likes: getRandomInteger(Posts.MIN_LIKES, Posts.MAX_LIKES),
-  comments: getRandomArrayElement(mockComments)
-});
+const postPhotos = getRandomIdFromRange(Photos.MIN_PHOTOS, Photos.MAX_PHOTOS);
+const idPost = getRandomIdFromRange(Posts.MIN_ID,Posts.MAX_ID);
+const createPost = () => (
+  {
+    id: idPost(),
+    url:  `photos/${postPhotos()}.jpg`,
+    description: getRandomArrayElement(mockDescriptions),
+    likes: getRandomInteger(Posts.MIN_LIKES, Posts.MAX_LIKES),
+    comments: createMoreComments()
+  }
+);
 
-const createMorePosts = () => {
-  Array.from({length: Posts.MAX_POSTS}, createPost);
-};
-createMorePosts();
+export const createMorePosts = () => Array.from({length: Posts.MAX_POSTS}, createPost);
