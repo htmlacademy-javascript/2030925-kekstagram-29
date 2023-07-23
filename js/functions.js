@@ -52,10 +52,29 @@ export const getRandomIdFromRange = () => {
   );
 };
 
-const turnToMinutes = (timeStr) => {
+/*
+export const getRandomIdFromRange = () => {
+  const previousValues = [];
+
+  return(
+    function(min,max) {
+      let currentValue = getRandomInteger(min,max);
+      if(previousValues.length >= (max - min + 1)) {
+        return null;
+      }
+      while(previousValues.includes(currentValue)) {
+        currentValue = getRandomInteger(min,max);
+      }
+      previousValues.push(currentValue);
+      return currentValue;
+    }
+  );
+};
+*/
+export const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
-  return (hours * 60) + Number(minutes);
+  return (hours * 60) + +minutes;
 };
 
 export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, startMeetTimeInHours, meetTimeInMinutes) => {
