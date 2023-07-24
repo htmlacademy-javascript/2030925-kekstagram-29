@@ -31,3 +31,11 @@ export const ErrorMessage = {
   INVALID_HASHTAG_PATTERN: 'Хештег(и) составлен(ы) неправильно',
   NON_UNIQUE_HASHTAG: 'Соблюдайте уникальность при составлении ваших хештегов!'
 };
+
+export const SCALE_STEP = 25;
+
+export const MIN_SCALE = 25;
+
+export const MAX_SCALE = 100;
+
+export const DEFAULT_SCALE = 100;

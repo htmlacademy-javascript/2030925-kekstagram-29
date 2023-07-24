@@ -1,5 +1,6 @@
 import { ErrorMessage, MAX_HASHTAG, REGULAR_SYMBOLS } from './constants.js';
 import { isEscapeKey } from './functions.js';
+import { resetScale } from './scale.js';
 
 const bodyElement = document.querySelector('body');
 const uploadForm = document.querySelector('.img-upload__form');
@@ -48,6 +49,7 @@ const openModal = () => {
 const cancelModal = () => {
   uploadForm.reset();
   pristine.reset();
+  resetScale();
   uploadOverlay.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
   uploadCloseButton.removeEventListener('click', cancelModal);
