@@ -1,4 +1,5 @@
 import { ErrorMessage, MAX_HASHTAG, REGULAR_SYMBOLS } from './constants.js';
+import { addEffects, destroyEffects } from './filter.js';
 import { isEscapeKey } from './functions.js';
 import { resetScale } from './scale.js';
 
@@ -44,12 +45,14 @@ const onFormSubmit = (evt) => {
 const openModal = () => {
   uploadOverlay.classList.remove('hidden');
   bodyElement.classList.add('modal-open');
+  addEffects();
 };
 
 const cancelModal = () => {
   uploadForm.reset();
   pristine.reset();
   resetScale();
+  destroyEffects();
   uploadOverlay.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
   uploadCloseButton.removeEventListener('click', cancelModal);
@@ -76,21 +79,5 @@ const onUploadChange = () => {
 export const renderModalForm = () => {
   uploadElement.addEventListener('change', onUploadChange);
 };
-/*
-commentField.addEventListener('focus', function() {
-  document.removeEventListener('keydown', closeWithEscape);
-});
 
-commentField.addEventListener('blur', function() {
-  document.addEventListener('keydown', closeWithEscape);
-});
-
-hashtagField.addEventListener('focus', function() {
-  document.removeEventListener('click', closeOnClick);
-});
-
-hashtagField.addEventListener('blur', function() {
-  document.addEventListener('click', closeOnClick);
-});
-*/
 uploadForm.addEventListener('submit', onFormSubmit);

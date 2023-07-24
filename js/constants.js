@@ -39,3 +39,48 @@ export const MIN_SCALE = 25;
 export const MAX_SCALE = 100;
 
 export const DEFAULT_SCALE = 100;
+
+export const Effects = {
+  DEFAULT: {
+    name: 'none',
+    min: 0,
+    max: 100,
+    step: 0,
+    unit: ''
+  },
+  CHROME: {
+    name: 'grayscale',
+    min: 0,
+    max: 1,
+    step: 0.1,
+    unit: ''
+  },
+  SEPIA: {
+    name: 'sepia',
+    min: 0,
+    max: 1,
+    step: 0.1,
+    unit: ''
+  },
+  MARVIN: {
+    name: 'invert',
+    min: 0,
+    max: 100,
+    step: 1,
+    unit: '%'
+  },
+  PHOBOS: {
+    name: 'blur',
+    min: 0,
+    max: 3,
+    step: 0.1,
+    unit: 'px'
+  },
+  HEAT: {
+    name: 'brightness',
+    min: 1,
+    max: 3,
+    step: 0.1,
+    unit: ''
+  }
+};
