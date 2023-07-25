@@ -1,4 +1,4 @@
-import {  Effects } from './constants.js';
+import { Effects } from './constants.js';
 
 const uploadElement = document.querySelector('.img-upload__form');
 const effectsList = uploadElement.querySelector('.effects__list');
@@ -77,7 +77,7 @@ const addSliderEffect = () => {
 };
 
 export const addEffects = () => {
-  effectsList.addEventListener('click', changeEffectPreview);
+  effectsList.addEventListener('change', changeEffectPreview);
   addSliderEffect();
 };
 
