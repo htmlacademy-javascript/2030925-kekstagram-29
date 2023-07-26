@@ -8,7 +8,9 @@ import './filter.js';
 import { createMorePosts } from './create-post.js';
 import { renderGallery } from './gallery.js';
 import { renderModalForm } from './form.js';
+import { switchToDefault } from './filter.js';
 const arrPictures = createMorePosts();
 
 renderGallery(arrPictures);
 renderModalForm();
+switchToDefault();

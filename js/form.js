@@ -1,5 +1,5 @@
 import { ErrorMessage, MAX_HASHTAG, REGULAR_SYMBOLS } from './constants.js';
-import { addEffects, destroyEffects } from './filter.js';
+import { addEffects, destroyEffects, resetEffects } from './filter.js';
 import { isEscapeKey } from './functions.js';
 import { resetScale } from './scale.js';
 
@@ -53,6 +53,7 @@ const cancelModal = () => {
   pristine.reset();
   resetScale();
   destroyEffects();
+  resetEffects();
   uploadOverlay.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
   uploadCloseButton.removeEventListener('click', cancelModal);
