@@ -5,12 +5,45 @@ import './big-picture-form.js';
 import './gallery.js';
 import './scale.js';
 import './filter.js';
-import { createMorePosts } from './create-post.js';
-import { renderGallery } from './gallery.js';
-import { renderModalForm } from './form.js';
+import './api.js';
+import { setOnFormSubmit, renderModalForm } from './form.js';
 import { switchToDefault } from './filter.js';
-const arrPictures = createMorePosts();
+import { getData } from './api.js';
+import { renderGallery } from './gallery.js';
+import { showAlert } from './functions.js';
 
-renderGallery(arrPictures);
-renderModalForm();
+getData()
+  .then((data) => {
+    renderGallery(data);
+    renderModalForm(data);
+  })
+  .catch((err) => {
+    showAlert(err.message);
+  });
+
+
 switchToDefault();
+
+setOnFormSubmit();
+
+
+/*setOnFormSubmit(async (data) => {
+  try {
+    await sendData(data);
+    renderModalForm(data);
+    cancelModal();
+    showSuccessMessage();
+  } catch {
+    showErrorMessage();
+  }
+});
+
+try {
+  const data = await getData();
+  renderGallery(data);
+} catch (err) {
+  showAlert(err.message);
+}
+
+switchToDefault();
+ */

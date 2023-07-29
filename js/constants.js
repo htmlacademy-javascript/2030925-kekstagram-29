@@ -92,3 +92,27 @@ export const Effects = [
 ];
 
 export const DEFAULT_EFFECT = Effects[0];
+
+export const SERVER_URL = 'https://29.javascript.pages.academy/kekstagram';
+
+export const Method = {
+  GET: 'GET',
+  POST: 'POST'
+};
+
+export const Route = {
+  GET_DATA: '/data',
+  SEND_DATA: '/'
+};
+
+export const ErrorText = {
+  GET_DATA: 'Какие-то неполадки... Попробуйте обновить страничку',
+  SEND_DATA: 'Возникла ошибка! Попробуйте ещё раз'
+};
+
+export const SHOW_TIME = 5000;
+
+export const SubmitButtonText = {
+  BEFORE: 'Опубликовать',
+  AFTER: 'Происходит магия...'
+};
