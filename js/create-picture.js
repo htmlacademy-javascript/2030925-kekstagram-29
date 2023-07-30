@@ -1,6 +1,5 @@
 const randomUserPictureListElement = document.querySelector('.pictures');
 const randomUserPictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
-/*const randomUserPictures = createMorePosts();*/
 
 export function renderPictures(arr) {
   const randomUserPictureFragment = document.createDocumentFragment();
@@ -18,4 +17,3 @@ export function renderPictures(arr) {
 
   randomUserPictureListElement.appendChild(randomUserPictureFragment);
 }
-
