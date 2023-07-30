@@ -10,12 +10,18 @@ import { setOnFormSubmit, renderModalForm } from './form.js';
 import { switchToDefault } from './filter.js';
 import { getData } from './api.js';
 import { renderGallery } from './gallery.js';
-import { showAlert } from './functions.js';
+import { debounce, showAlert } from './functions.js';
+import { renderSortedPictures } from './sort.js';
+import { renderPictures } from './create-picture.js';
+import { uploadPicture } from './upload-picture.js';
 
 getData()
   .then((data) => {
+    const debouncedPictures = debounce(renderPictures);
+
     renderGallery(data);
     renderModalForm(data);
+    renderSortedPictures(data, debouncedPictures);
   })
   .catch((err) => {
     showAlert(err.message);
@@ -23,8 +29,8 @@ getData()
 
 
 switchToDefault();
-
 setOnFormSubmit();
+uploadPicture();
 
 
 /*setOnFormSubmit(async (data) => {

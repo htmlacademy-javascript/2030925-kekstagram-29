@@ -116,3 +116,17 @@ export const SubmitButtonText = {
   BEFORE: 'Опубликовать',
   AFTER: 'Происходит магия...'
 };
+
+export const FILE_TYPES = [
+  'jpg',
+  'jpeg',
+  'png'
+];
+
+export const SortType = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  POPULAR: 'filter-discussed'
+};
+
+export const TIMEOUT = 500;
