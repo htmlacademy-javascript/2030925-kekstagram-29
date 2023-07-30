@@ -12,8 +12,8 @@ import { getData } from './api.js';
 import { renderGallery } from './gallery.js';
 import { debounce, showAlert } from './functions.js';
 import { renderSortedPictures } from './sort.js';
-import { renderPictures } from './create-picture.js';
 import { uploadPicture } from './upload-picture.js';
+import { renderPictures } from './create-picture.js';
 
 getData()
   .then((data) => {

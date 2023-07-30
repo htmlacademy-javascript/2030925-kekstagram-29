@@ -2,7 +2,7 @@ import { FILE_TYPES } from './constants.js';
 
 const pictureUploadElement = document.querySelector('.img-upload__input[type=file]');
 const picturePreview = document.querySelector('.img-upload__preview img');
-const picturePreviewEffects = document.querySelector('.effects__preview');
+const picturePreviewEffects = document.querySelectorAll('.effects__preview');
 
 export const uploadPicture = () => {
   pictureUploadElement.addEventListener('change', () => {

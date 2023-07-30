@@ -1,4 +1,4 @@
-import { SortType } from './constants.js';
+import { Photos, SortType } from './constants.js';
 
 const sortList = document.querySelector('.img-filters');
 const sortButtons = document.querySelectorAll('.img-filters__button');
@@ -10,7 +10,7 @@ const sortSettings = () => {
   if (currentSortType === SortType.POPULAR) {
     return picturesList.slice().sort((a, b) => b.comments.length - a.comments.length);
   } else if (currentSortType === SortType.RANDOM) {
-    return picturesList.slice().sort(() => Math.random() - 0.5).slice(0, 10);
+    return picturesList.slice().sort(() => Math.random() - 0.5).slice(Photos.MIN_AVATAR_PHOTOS, Photos.MAX_RANDOM_PHOTOS);
   }
   return picturesList;
 };

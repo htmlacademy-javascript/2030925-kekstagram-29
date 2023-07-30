@@ -2,7 +2,9 @@ export const Photos = {
   MIN_PHOTOS: 1,
   MAX_PHOTOS: 25,
   MIN_AVATAR_PHOTOS: 1,
-  MAX_AVATAR_PHOTOS: 6
+  MAX_AVATAR_PHOTOS: 6,
+  MIN_RANDOM_PHOTOS: 0,
+  MAX_RANDOM_PHOTOS: 10
 };
 
 export const Comments = {

@@ -86,7 +86,7 @@ export const renderModalForm = () => {
   uploadElement.addEventListener('change', onUploadChange);
 };
 
-uploadForm.addEventListener('input', () => {
+uploadForm.addEventListener('change', () => {
   const isValid = pristine.validate();
   if (!isValid) {
     disableSubmitButton();
