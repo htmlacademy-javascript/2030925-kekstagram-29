@@ -1,13 +1,12 @@
 import { isEscapeKey } from './functions.js';
 
-let messageType;
-
 const Response = {
   SUCCESS: 'success',
   ERROR: 'error'
 };
 
 export const showSuccessMessage = (success = true) => {
+  let messageType;
   if (success === true) {
     messageType = Response.SUCCESS;
   }
