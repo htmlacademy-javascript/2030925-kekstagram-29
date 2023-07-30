@@ -94,14 +94,14 @@ uploadForm.addEventListener('change', () => {
   unlockSubmitButton();
 });
 
-const StartSendData = () => {
+const startSendData = () => {
   disableSubmitButton();
   uploadButton.textContent = SubmitButtonText.AFTER;
   hashtagField.readonly = true;
   commentField.readonly = true;
 };
 
-const EndSendData = () => {
+const endSendData = () => {
   unlockSubmitButton();
   uploadButton.textContent = SubmitButtonText.BEFORE;
   hashtagField.readonly = false;
@@ -114,7 +114,7 @@ export const setOnFormSubmit = () => {
     const isValid = pristine.validate();
     if (isValid) {
       const formData = new FormData(evt.target);
-      StartSendData();
+      startSendData();
       sendData(formData, () => {
         cancelModal();
         showSuccessMessage();
@@ -122,7 +122,7 @@ export const setOnFormSubmit = () => {
         .catch(() => (
           showSuccessMessage(false)
         ))
-        .finally(EndSendData);
+        .finally(endSendData);
     }
   });
 };

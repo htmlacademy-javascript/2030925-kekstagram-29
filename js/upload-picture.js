@@ -12,9 +12,7 @@ export const uploadPicture = () => {
 
     if (matches) {
       picturePreview.src = URL.createObjectURL(picture);
-      picturePreviewEffects.forEach((effect) => {
-        effect.style.backgroundImage = `url(${picturePreview.src})`;
-      });
+      picturePreviewEffects.forEach((effect) => (effect.style.backgroundImage = `url(${URL.createObjectURL(picture)})`));
     }
   });
 };
