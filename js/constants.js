@@ -2,7 +2,9 @@ export const Photos = {
   MIN_PHOTOS: 1,
   MAX_PHOTOS: 25,
   MIN_AVATAR_PHOTOS: 1,
-  MAX_AVATAR_PHOTOS: 6
+  MAX_AVATAR_PHOTOS: 6,
+  MIN_RANDOM_PHOTOS: 0,
+  MAX_RANDOM_PHOTOS: 10
 };
 
 export const Comments = {
@@ -116,3 +118,17 @@ export const SubmitButtonText = {
   BEFORE: 'Опубликовать',
   AFTER: 'Происходит магия...'
 };
+
+export const FILE_TYPES = [
+  'jpg',
+  'jpeg',
+  'png'
+];
+
+export const SortType = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  POPULAR: 'filter-discussed'
+};
+
+export const TIMEOUT = 500;

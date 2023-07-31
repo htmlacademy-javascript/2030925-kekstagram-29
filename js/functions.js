@@ -75,25 +75,6 @@ export const showAlert = (message) => {
   }, SHOW_TIME);
 };
 
-/*
-export const getRandomIdFromRange = () => {
-  const previousValues = [];
-
-  return(
-    function(min,max) {
-      let currentValue = getRandomInteger(min,max);
-      if(previousValues.length >= (max - min + 1)) {
-        return null;
-      }
-      while(previousValues.includes(currentValue)) {
-        currentValue = getRandomInteger(min,max);
-      }
-      previousValues.push(currentValue);
-      return currentValue;
-    }
-  );
-};
-*//*
 export const turnToMinutes = (timeStr) => {
   const [hours, minutes] = timeStr.split(':');
 
@@ -107,7 +88,16 @@ export const calculateMeeting = (startWorkTimeInHours, endWorkTimeInHours, start
 
   return (startMeetTimeInHours >= startWorkTimeInHours) && (startMeetTimeInHours + meetTimeInMinutes) <= endWorkTimeInHours;
 };
-*/
+
+export const debounce = (cb, timeoutDelay = 500) => {
+  let timeoutId;
+
+  return(...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => cb.apply(this, rest), timeoutDelay);
+  };
+};
+
 checkLength('Какое-то слово');
 checkPalindrome('Лёша на полке клопа нашёл');
 stringToPositiveNumber('коровы 33');
