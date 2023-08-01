@@ -55,7 +55,7 @@ const renderComments = () => {
 
 const cancelBigPicture = () => {
   bigPictureElement.classList.add('hidden');
-  bodyElement.classList.remove('.modal-open');
+  bodyElement.classList.remove('modal-open');
   document.removeEventListener('keydown', closeWithEscape);
   commentsPortion = 0;
 };

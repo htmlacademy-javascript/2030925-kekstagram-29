@@ -1,6 +1,5 @@
 import { ErrorText, SERVER_URL, Method, Route } from './constants.js';
 
-
 const load = (route, errorText, method = Method.GET, body = null) =>
   fetch(`${SERVER_URL}${route}`, {method, body})
     .then((response) => {

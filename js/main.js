@@ -27,25 +27,3 @@ getData()
 switchToDefault();
 setOnFormSubmit();
 uploadPicture();
-
-
-/*setOnFormSubmit(async (data) => {
-  try {
-    await sendData(data);
-    renderModalForm(data);
-    cancelModal();
-    showSuccessMessage();
-  } catch {
-    showErrorMessage();
-  }
-});
-
-try {
-  const data = await getData();
-  renderGallery(data);
-} catch (err) {
-  showAlert(err.message);
-}
-
-switchToDefault();
- */
