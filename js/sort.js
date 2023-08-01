@@ -2,8 +2,8 @@ import { Photos, SortType, TIMEOUT } from './constants.js';
 import { renderPictures } from './create-picture.js';
 import { debounce } from './functions.js';
 
-const sortList = document.querySelector('.img-filters');
-const sortButtons = document.querySelectorAll('.img-filters__button');
+const sortListElement = document.querySelector('.img-filters');
+const sortButtonsElement = document.querySelectorAll('.img-filters__button');
 
 const sortSettings = (pictures, sortButton) => {
   if (sortButton.id === SortType.DEFAULT) {
@@ -21,7 +21,7 @@ const sortSettings = (pictures, sortButton) => {
 
 const setSortByClick = (evt, cb) => {
   if (evt.target.classList.contains('img-filters__button')) {
-    sortButtons.forEach((button) => button.classList.remove('img-filters__button--active'));
+    sortButtonsElement.forEach((button) => button.classList.remove('img-filters__button--active'));
 
     const sortButton = evt.target;
     sortButton.classList.add('img-filters__button--active');
@@ -31,12 +31,12 @@ const setSortByClick = (evt, cb) => {
 };
 
 const addSortListener = (cb) => {
-  sortList.addEventListener('click', debounce((evt) => {
+  sortListElement.addEventListener('click', debounce((evt) => {
     setSortByClick(evt, cb);
   }, TIMEOUT));
 };
 
 export const renderSortedPictures = (pictures) => {
-  sortList.classList.remove('img-filters--inactive');
+  sortListElement.classList.remove('img-filters--inactive');
   addSortListener(pictures);
 };
