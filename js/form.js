@@ -116,10 +116,10 @@ export const setOnFormSubmit = () => {
       const formData = new FormData(evt.target);
       startSendData();
       sendData(formData, () => {})
-      .then(() => {
-        cancelModal();
-        showSuccessMessage();
-      })
+        .then(() => {
+          cancelModal();
+          showSuccessMessage();
+        })
         .catch(() => (
           showSuccessMessage(false)
         ))

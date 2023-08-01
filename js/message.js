@@ -1,5 +1,5 @@
 import { isEscapeKey } from './functions.js';
-import { Response } from './constants.js'
+import { Response } from './constants.js';
 
 let messageType;
 
