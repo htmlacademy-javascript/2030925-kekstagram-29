@@ -18,34 +18,34 @@ export const showSuccessMessage = (success = true) => {
 
   const removeElement = (element) => element.remove();
 
-  const closeWithEscape = (evt) => {
+  const onEscapeClick = (evt) => {
     if (isEscapeKey(evt)) {
       evt.preventDefault();
       removeElement(messageElement);
-      bodyElement.removeEventListener('keydown', closeWithEscape);
+      bodyElement.removeEventListener('keydown', onEscapeClick);
     }
   };
 
   const closeMessage = () => {
     removeElement(messageElement);
-    bodyElement.removeEventListener('keydown', closeWithEscape);
+    bodyElement.removeEventListener('keydown', onEscapeClick);
   };
 
-  const closeOnElementClick = () => {
+  const onElementClick = () => {
     closeMessage();
   };
 
-  const closeOnOutsideClick = (evt) => {
+  const onOutsideClick = (evt) => {
     if (evt.target === messageElement) {
       closeMessage();
     }
   };
 
-  buttonElement.addEventListener('click', closeOnElementClick);
+  buttonElement.addEventListener('click', onElementClick);
 
-  bodyElement.addEventListener('keydown', closeWithEscape);
+  bodyElement.addEventListener('keydown', onEscapeClick);
 
-  bodyElement.addEventListener('click', closeOnOutsideClick);
+  bodyElement.addEventListener('click', onOutsideClick);
 
   bodyElement.append(messageElement);
 

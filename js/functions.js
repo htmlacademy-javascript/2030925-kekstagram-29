@@ -28,29 +28,6 @@ const stringToPositiveNumber = (arg) => {
   return parseInt(result, 10);
 };
 
-export const getRandomArrayElement = (items) => items[Math.floor(Math.random() * items.length)];
-
-export const getRandomInteger = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-export const getRandomIdFromRange = (min,max) => {
-  const previousValues = [];
-  return function() {
-    let currentValue = getRandomInteger(min,max);
-    if(previousValues.length >= (max - min + 1)) {
-      return null;
-    }
-    while (previousValues.includes(currentValue)) {
-      currentValue = getRandomInteger(min,max);
-    }
-    previousValues.push(currentValue);
-    return currentValue;
-  };
-};
-
 export const isEscapeKey = (evt) => evt.key === 'Escape';
 
 export const showAlert = (message) => {

@@ -6,25 +6,25 @@ import { resetScale } from './scale.js';
 import { showSuccessMessage } from './message.js';
 
 const bodyElement = document.querySelector('body');
-const uploadForm = document.querySelector('.img-upload__form');
-const uploadButton = uploadForm.querySelector('.img-upload__submit');
-const uploadOverlay = uploadForm.querySelector('.img-upload__overlay');
-const uploadElement = uploadForm.querySelector('#upload-file');
-const uploadCloseButton = uploadForm.querySelector('#upload-cancel');
-const hashtagField = uploadForm.querySelector('.text__hashtags');
-const commentField = uploadForm.querySelector('.text__description');
+const uploadFormElement = document.querySelector('.img-upload__form');
+const uploadButtonElement = uploadFormElement.querySelector('.img-upload__submit');
+const uploadOverlayElement = uploadFormElement.querySelector('.img-upload__overlay');
+const uploadElement = uploadFormElement.querySelector('#upload-file');
+const uploadCloseButtonElement = uploadFormElement.querySelector('#upload-cancel');
+const hashtagFieldElement = uploadFormElement.querySelector('.text__hashtags');
+const commentFieldElement = uploadFormElement.querySelector('.text__description');
 
-const isTextFieldFocused = () => document.activeElement === hashtagField || document.activeElement === commentField;
+const isTextFieldFocused = () => document.activeElement === hashtagFieldElement || document.activeElement === commentFieldElement;
 
 const disableSubmitButton = () => {
-  uploadButton.disabled = true;
+  uploadButtonElement.disabled = true;
 };
 
 const unlockSubmitButton = () => {
-  uploadButton.disabled = false;
+  uploadButtonElement.disabled = false;
 };
 
-const pristine = new Pristine(uploadForm, {
+const pristine = new Pristine(uploadFormElement, {
   classTo: 'img-upload__field-wrapper',
   errorTextParent: 'img-upload__field-wrapper',
   errorTextClass: 'img-upload__field-wrapper-error'
@@ -41,35 +41,35 @@ const hasValidCount = (tags) => normalizeTags(tags).length <= MAX_HASHTAG;
 
 const hasValidTags = (tags) => normalizeTags(tags).every((tag) => REGULAR_SYMBOLS.test(tag));
 
-pristine.addValidator(hashtagField, checkTagUnique, ErrorMessage.NON_UNIQUE_HASHTAG, 1 , false);
+pristine.addValidator(hashtagFieldElement, checkTagUnique, ErrorMessage.NON_UNIQUE_HASHTAG, 1 , false);
 
-pristine.addValidator(hashtagField, hasValidTags, ErrorMessage.INVALID_HASHTAG_PATTERN, 2 , false);
+pristine.addValidator(hashtagFieldElement, hasValidTags, ErrorMessage.INVALID_HASHTAG_PATTERN, 2 , false);
 
-pristine.addValidator(hashtagField, hasValidCount, ErrorMessage.INVALID_HASHTAG_COUNT, 3 , false);
+pristine.addValidator(hashtagFieldElement, hasValidCount, ErrorMessage.INVALID_HASHTAG_COUNT, 3 , false);
 
 const openModal = () => {
-  uploadOverlay.classList.remove('hidden');
+  uploadOverlayElement.classList.remove('hidden');
   bodyElement.classList.add('modal-open');
   addEffects();
 };
 
 const cancelModal = () => {
-  uploadForm.reset();
+  uploadFormElement.reset();
   pristine.reset();
   resetScale();
   destroyEffects();
   resetEffects();
-  uploadOverlay.classList.add('hidden');
+  uploadOverlayElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
-  uploadCloseButton.removeEventListener('click', cancelModal);
-  document.removeEventListener('click', closeWithEscape);
+  uploadCloseButtonElement.removeEventListener('click', cancelModal);
+  document.removeEventListener('click', onEscapeClick);
 };
 
-function closeOnClick() {
+function onMouseClick() {
   cancelModal();
 }
 
-function closeWithEscape(evt) {
+function onEscapeClick(evt) {
   if (isEscapeKey(evt) && !isTextFieldFocused()) {
     evt.preventDefault();
     cancelModal();
@@ -78,15 +78,15 @@ function closeWithEscape(evt) {
 
 const onUploadChange = () => {
   openModal();
-  uploadCloseButton.addEventListener('click', closeOnClick);
-  document.addEventListener('keydown', closeWithEscape);
+  uploadCloseButtonElement.addEventListener('click', onMouseClick);
+  document.addEventListener('keydown', onEscapeClick);
 };
 
 export const renderModalForm = () => {
   uploadElement.addEventListener('change', onUploadChange);
 };
 
-uploadForm.addEventListener('change', () => {
+uploadFormElement.addEventListener('change', () => {
   const isValid = pristine.validate();
   if (!isValid) {
     disableSubmitButton();
@@ -96,20 +96,20 @@ uploadForm.addEventListener('change', () => {
 
 const startSendData = () => {
   disableSubmitButton();
-  uploadButton.textContent = SubmitButtonText.AFTER;
-  hashtagField.readonly = true;
-  commentField.readonly = true;
+  uploadButtonElement.textContent = SubmitButtonText.AFTER;
+  hashtagFieldElement.readonly = true;
+  commentFieldElement.readonly = true;
 };
 
 const endSendData = () => {
   unlockSubmitButton();
-  uploadButton.textContent = SubmitButtonText.BEFORE;
-  hashtagField.readonly = false;
-  commentField.readonly = false;
+  uploadButtonElement.textContent = SubmitButtonText.BEFORE;
+  hashtagFieldElement.readonly = false;
+  commentFieldElement.readonly = false;
 };
 
 export const setOnFormSubmit = () => {
-  uploadForm.addEventListener('submit', (evt) => {
+  uploadFormElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const isValid = pristine.validate();
     if (isValid) {
