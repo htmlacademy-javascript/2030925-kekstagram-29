@@ -4,10 +4,7 @@ import { debounce } from './functions.js';
 
 const sortList = document.querySelector('.img-filters');
 const sortButtons = document.querySelectorAll('.img-filters__button');
-/*
-let currentSortType = SortType.DEFAULT;
-const picturesList = [];
-*/
+
 const sortSettings = (pictures, sortButton) => {
   if (sortButton.id === SortType.DEFAULT) {
     return pictures;
@@ -16,10 +13,10 @@ const sortSettings = (pictures, sortButton) => {
   if (sortButton.id === SortType.RANDOM) {
     return pictures.slice().sort(() => Math.random() - 0.5).slice(Photos.MIN_RANDOM_PHOTOS, Photos.MAX_RANDOM_PHOTOS);
   }
-
-  if (sortButton.id === SortType.DISCUSSED) {
+  if (sortButton.id === SortType.POPULAR) {
     return pictures.slice().sort((a, b)=>(b.comments.length - a.comments.length));
   }
+  return pictures;
 };
 
 const setSortByClick = (evt, cb) => {

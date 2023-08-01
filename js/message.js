@@ -1,17 +1,14 @@
 import { isEscapeKey } from './functions.js';
+import { Response } from './constants.js'
 
 let messageType;
-
-const Response = {
-  SUCCESS: 'success',
-  ERROR: 'error'
-};
 
 export const showSuccessMessage = (success = true) => {
   if (success === true) {
     messageType = Response.SUCCESS;
+  } else {
+    messageType = Response.ERROR;
   }
-  messageType = Response.ERROR;
 
 
   const messageTemplate = document.querySelector(`#${messageType}`).content.querySelector(`.${messageType}`);

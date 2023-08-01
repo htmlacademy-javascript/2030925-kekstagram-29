@@ -132,3 +132,8 @@ export const SortType = {
 };
 
 export const TIMEOUT = 500;
+
+export const Response = {
+  SUCCESS: 'success',
+  ERROR: 'error'
+};

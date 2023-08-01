@@ -115,7 +115,8 @@ export const setOnFormSubmit = () => {
     if (isValid) {
       const formData = new FormData(evt.target);
       startSendData();
-      sendData(formData, () => {
+      sendData(formData, () => {})
+      .then(() => {
         cancelModal();
         showSuccessMessage();
       })
