@@ -119,7 +119,7 @@ export const SubmitButtonText = {
   AFTER: 'Происходит магия...'
 };
 
-export const FILE_TYPES = [
+export const FORMATS = [
   'jpg',
   'jpeg',
   'png'
