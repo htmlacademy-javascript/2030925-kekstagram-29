@@ -4,7 +4,7 @@ import { COMMENTS_PORTION } from './constants.js';
 
 const bigPictureElement = document.querySelector('.big-picture');
 const bigPictureCancelElement = document.querySelector('.big-picture__cancel');
-const commentElement = document.querySelector('#comment').content.querySelector('.social__comment');
+const socialCommentElement = document.querySelector('#comment').content.querySelector('.social__comment');
 const commentsListElement = document.querySelector('.social__comments');
 const postCommentsCountElement = document.querySelector('.comments-shown-count');
 const commentsCountElement = document.querySelector('.comments-count');
@@ -16,12 +16,12 @@ let commentsPortion = 0;
 let comments = [];
 
 const createPictureComment = ({avatar,message,name}) => {
-  const comment = commentElement.cloneNode(true);
-  comment.querySelector('.social__picture').src = avatar;
-  comment.querySelector('.social__picture').alt = name;
-  comment.querySelector('.social__text').textContent = message;
+  const commentElement = socialCommentElement.cloneNode(true);
+  commentElement.querySelector('.social__picture').src = avatar;
+  commentElement.querySelector('.social__picture').alt = name;
+  commentElement.querySelector('.social__text').textContent = message;
 
-  return (comment);
+  return (commentElement);
 };
 
 const createPictureInfo = ({url, likes, description}) => {

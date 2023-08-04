@@ -23,10 +23,10 @@ const setSortByClick = (evt, cb) => {
   if (evt.target.classList.contains('img-filters__button')) {
     sortButtonsElement.forEach((button) => button.classList.remove('img-filters__button--active'));
 
-    const sortButton = evt.target;
-    sortButton.classList.add('img-filters__button--active');
+    const sortButtonElement = evt.target;
+    sortButtonElement.classList.add('img-filters__button--active');
     document.querySelectorAll('.picture').forEach((element) => element.remove());
-    renderPictures(sortSettings(cb, sortButton));
+    renderPictures(sortSettings(cb, sortButtonElement));
   }
 };
 
