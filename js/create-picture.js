@@ -5,14 +5,15 @@ export function renderPictures(arr) {
   const randomUserPictureFragment = document.createDocumentFragment();
 
   arr.forEach(({id, url, description, likes, comments}) => {
-    const randomUserPicture = randomUserPictureTemplate.cloneNode(true);
+    const randomUserPictureElement = randomUserPictureTemplate.cloneNode(true);
+    const randomUserImageElement = randomUserPictureElement.querySelector('.picture__img');
 
-    randomUserPicture.querySelector('.picture__img').src = url;
-    randomUserPicture.querySelector('.picture__img').alt = description;
-    randomUserPicture.querySelector('.picture__likes').textContent = likes;
-    randomUserPicture.querySelector('.picture__comments').textContent = comments.length;
-    randomUserPicture.dataset.pictureId = id;
-    randomUserPictureFragment.appendChild(randomUserPicture);
+    randomUserImageElement.src = url;
+    randomUserImageElement.alt = description;
+    randomUserPictureElement.querySelector('.picture__likes').textContent = likes;
+    randomUserPictureElement.querySelector('.picture__comments').textContent = comments.length;
+    randomUserPictureElement.dataset.pictureId = id;
+    randomUserPictureFragment.appendChild(randomUserPictureElement);
   });
 
   randomUserPictureListElement.appendChild(randomUserPictureFragment);
